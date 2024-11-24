@@ -10,6 +10,13 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 
+import matplotlib.pyplot as plt
+from sklearn.feature_selection import SelectKBest, chi2
+
+import seaborn as sns
+
+
+
 
 df = pd.read_csv('breast-cancer.csv')
 df.head()
@@ -54,11 +61,6 @@ print("Selected Features:", selected_features)
 
 # In[12]:
 
-
-import matplotlib.pyplot as plt
-from sklearn.feature_selection import SelectKBest, chi2
-
-
 X = df.drop(columns=['diagnosis', 'id'])
 y = df['diagnosis']
 
@@ -87,8 +89,6 @@ plt.show()
 # In[13]:
 
 
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 correlation_matrix = df.corr()
 
@@ -123,7 +123,7 @@ from sklearn.linear_model import LogisticRegression
 
 
 models = {
-    "Logistic Regression": (LogisticRegression(max_iter=1000, random_state=42), {
+    "Logistic Regression": (LogisticRegression(max_iter=5000, random_state=42), {
         'C': [0.1, 1, 10, 100],
         'solver': ['liblinear', 'lbfgs']
     }),
@@ -188,7 +188,7 @@ print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 # In[20]:
 
 
-final_model = LogisticRegression(C=10, solver='liblinear', max_iter=1000, random_state=42)
+final_model = LogisticRegression(C=10, solver='liblinear', max_iter=5000, random_state=42)
 final_model.fit(X_train_scaled, y_train)
 
 
@@ -215,10 +215,10 @@ print(classification_report(y_test, y_test_pred))
 import pickle
 
 # Save the final model
-with open('final_logistic_regression_model.pkl', 'wb') as file:
+with open('final_logistic_regression_model', 'wb') as file:
     pickle.dump(final_model, file)
 
-print("Model saved as 'final_logistic_regression_model.pkl'")
+print("Model saved as 'final_logistic_regression_model'")
 
 
 # In[8]:
@@ -231,9 +231,9 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 
 
-with open('scaler.pkl', 'wb') as scaler_file:
+with open('scaler', 'wb') as scaler_file:
     pickle.dump(scaler, scaler_file)
-print("Scaler saved as 'scaler.pkl'")
+print("Scaler saved as 'scaler'")
 
 
 # ## 
