@@ -66,3 +66,6 @@ Run the Streamlit app:
 streamlit run streamlitApp.py
 The application will be accessible at http://localhost:8501 in your web browser.
 
+# Streamlit cloud link
+https://testml-9wuu92gudcune6ef6zjlyx.streamlit.app/
+
