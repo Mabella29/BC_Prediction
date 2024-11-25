@@ -3,6 +3,9 @@
 Breast Cancer Prediction Model
 This project uses a Logistic Regression model to predict whether a breast cancer tumor is malignant or benign based on a set of features extracted from breast cancer diagnostic data. The model has been trained on a dataset containing various features related to the tumor’s physical characteristics, such as radius, texture, area, perimeter, and others.
 
+# Streamlit cloud link
+https://testml-9wuu92gudcune6ef6zjlyx.streamlit.app/
+
 ## Model Overview
 The model is designed to classify breast cancer tumors into two categories:
 
@@ -66,6 +69,5 @@ Run the Streamlit app:
 streamlit run streamlitApp.py
 The application will be accessible at http://localhost:8501 in your web browser.
 
-# Streamlit cloud link
-https://testml-9wuu92gudcune6ef6zjlyx.streamlit.app/
+
 
