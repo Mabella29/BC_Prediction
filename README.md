@@ -9,8 +9,8 @@ https://testml-9wuu92gudcune6ef6zjlyx.streamlit.app/
 ## Model Overview
 The model is designed to classify breast cancer tumors into two categories:
 
-# Malignant: Cancerous tumors
-# Benign: Non-cancerous tumors
+1. Malignant: Cancerous tumors
+2. Benign: Non-cancerous tumors
 
 # Key Features
 Mean Radius: The average distance from the center to the perimeter of the tumor.
